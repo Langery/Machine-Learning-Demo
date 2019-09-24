@@ -10,3 +10,9 @@
 1. 'right answers' given
 2. Regiression: Predict continuous valued output
 3. Classification: Discrete valued output(0 or 1)
+
+### Unsupervised learning
+
+### Model(Supervised learning)
+
+#### Linear regression(Univariate linear regression)
