@@ -14,3 +14,9 @@ print(t)
 torch.LongTensor([1, 2, 3])
 t[0] = -1
 print(b)
+
+# linspace 返回一个一维张量
+print(torch.linspace(3, 10, steps=5))
+print(torch.linspace(-10, 10, steps=5))
+
+print(torch.ones(2, 3))
