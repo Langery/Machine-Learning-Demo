@@ -16,6 +16,31 @@ c. concat
 
 1. **backbone**
 
+> 三个发展方向
+
+a. Deeper 网络层数更深，代表网络VggNet
+b. Module 采用模块化的网络结构（Inception），代表网络GoogleNet
+c. Faster 轻量级网络模型，适合于移动端设备，代表网络MobileNet和ShuffleNet
+d. Functional 功能型网络，针对特定使用场景而发展出来。如检测模型YOLO，Faster RCNN；分割模型FCN， UNet
+
+> 三个阶段
+
+a. 0-1st generation
+LeNet-5 -> AlexNet -> ZF
+b. 2nd generation
+VGGNet -> GoogLeNet
+c. 3rd generation
+ResNet -> DenseNet -> CapsNet
+
+  - LeNet-5
+  - AlexNet
+  - ZF
+  - VGGNet
+  - GoogLeNet
+  - ResNet
+  - DenseNet
+  - CapsNet
+
 2. **Output**
 
 &emsp;&emsp;yolo v3 输出了 3 个不同尺度的 feature map（y1，y2，y3），其深度都为 255，边长的规律是 13:26:52
@@ -47,3 +72,4 @@ c. concat
 [参考文献]
 
 1. [一文看懂YOLO v3](https://blog.csdn.net/litt1e/article/details/88907542)
+2. [神经网络模型(Backbone)](https://www.cnblogs.com/silence-cho/p/11620863.html)
