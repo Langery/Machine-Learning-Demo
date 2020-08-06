@@ -1,12 +1,31 @@
 import time
 import calendar
 
-from dict.chatDict import dict
+# from dict.chatDict import dict
+import json
+
+def loadConfig():
+    with open('./dict/chatDict.py', 'r') as f:
+        return json.load(f)
+    raise Exception("Read config file failed")
+
+def writeConfig(feat):
+    with open('./dict/chatDict.py', 'w') as f:
+        json.dump(feat, f)
+
+try:
+    dict = loadConfig()
+except Exception as e:
+    print(e)
+
+d = loadConfig()
+print(d)
+# writeConfig(d)
 
 flag = ('A')
 work = True
 print('你好，我是你的机器人助手\n')
-print('请问有时间和我聊聊么\n')
+print('让我们一起聊聊天吧\n')
 
 while flag == 'A' or 'B':
   flag = input('A:陪我聊天,B:训练我聊天,C:给我翻译,D:天气,E:结束\nX:查看字典\n')
@@ -17,6 +36,7 @@ while flag == 'A' or 'B':
       print('学习成功\n')
       print('现在我已经学会了%d个问题\n'%len(dict))
       # 将训练后的数据写入到字典中
+      # dict.update({str(question): str(answer)})
       continue
   elif flag == 'A':
       if len(dict) == 0:
