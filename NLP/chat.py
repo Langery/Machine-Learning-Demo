@@ -1,26 +1,7 @@
 import time
 import calendar
 
-# from dict.chatDict import dict
-import json
-
-def loadConfig():
-    with open('./dict/chatDict.py', 'r') as f:
-        return json.load(f)
-    raise Exception("Read config file failed")
-
-def writeConfig(feat):
-    with open('./dict/chatDict.py', 'w') as f:
-        json.dump(feat, f)
-
-try:
-    dict = loadConfig()
-except Exception as e:
-    print(e)
-
-d = loadConfig()
-print(d)
-# writeConfig(d)
+from dict.chatDict import dict
 
 flag = ('A')
 work = True
