@@ -1,7 +1,7 @@
 import time
 import calendar
 
-from dict.chatDict import dict
+import cPickle as pickle
 
 flag = ('A')
 work = True
@@ -9,7 +9,7 @@ print('你好，我是你的机器人助手\n')
 print('让我们一起聊聊天吧\n')
 
 while flag == 'A' or 'B':
-  flag = input('A:陪我聊天,B:训练我聊天,C:给我翻译,D:天气,E:结束\nX:查看字典\n')
+  flag = input('A:陪我聊天,B:训练我聊天,C:给我翻译,D:天气,E:结束\n X:查看字典\n a: 测试写入数据\n')
   if flag == "B":
       question = input('请输入你想问的\n')
       answer = input('请输入问题的答案\n')
@@ -35,8 +35,18 @@ while flag == 'A' or 'B':
       if work == False:
           print('sorry，这个问题我回答不上来\n')
           work = True
-  elif flag == 'E':
+  elif flag == 'E': # ending
       print('好的，我们下次再聊\n')
       break
   elif flag == 'X':
+      # check dict information
       print(dict)
+  elif flag == 'a':
+      # print(dict)
+      # dict.update(hello = 'hi')
+      # print(dict)
+      exDict = { 'hello': 'hi' }
+      with open('./dict/chatDict.py', 'r', encoding='utf-8') as f:
+          print(f.read())
+          f.write(pickle.dumps(exDict))
+          print(f.read())
