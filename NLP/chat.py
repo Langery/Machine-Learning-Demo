@@ -1,7 +1,8 @@
 import time
 import calendar
 
-import cPickle as pickle
+import json
+# import cPickle as pickle
 
 flag = ('A')
 work = True
@@ -47,6 +48,29 @@ while flag == 'A' or 'B':
       # print(dict)
       exDict = { 'hello': 'hi' }
       with open('./dict/chatDict.py', 'r', encoding='utf-8') as f:
-          print(f.read())
-          f.write(pickle.dumps(exDict))
-          print(f.read())
+          # print(f.read())
+          tex = f.read()
+          print(tex)
+          print(type(tex))
+
+          # print(tex.dict)
+          texn = tex[tex.find('{'):]
+          print(texn)
+          dictn = json.loads(texn)
+          print(dictn)
+          dictn.update(hello = 'hi')
+          print(dictn)
+
+      with open('./dict/newchatDict.py', 'w', encoding='utf-8') as fw:
+          # fw.write(json.jumps(dictn))
+          print(dictn)
+          dictn = 'dict =' + json.dumps(dictn, ensure_ascii=False)
+          print(dictn)
+          fw.write(dictn)
+          # print(type(dictn))
+          # dictn.update(exDict)
+          # print(dictn)
+
+          # k = eval(tex)
+          # f.write(pickle.dumps(exDict))
+          # print(f.read())
