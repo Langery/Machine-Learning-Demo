@@ -3,6 +3,7 @@ import calendar
 
 import json
 # import cPickle as pickle
+from dict.chatDict import dict
 
 flag = ('A')
 work = True
@@ -10,7 +11,7 @@ print('你好，我是你的机器人助手\n')
 print('让我们一起聊聊天吧\n')
 
 while flag == 'A' or 'B':
-  flag = input('A:陪我聊天,B:训练我聊天,C:给我翻译,D:天气,E:结束\n X:查看字典\n a: 测试写入数据\n')
+  flag = input('A:陪我聊天, B:训练我聊天, C:给我翻译, q:结束\n X:查看字典\n a: 测试写入数据\n')
   if flag == "B":
       question = input('请输入你想问的\n')
       answer = input('请输入问题的答案\n')
@@ -18,7 +19,16 @@ while flag == 'A' or 'B':
       print('学习成功\n')
       print('现在我已经学会了%d个问题\n'%len(dict))
       # 将训练后的数据写入到字典中
-      # dict.update({str(question): str(answer)})
+      seDict = { str(question): str(answer) }
+      with open('./dict/chatDict.py', 'r', encoding='utf-8') as f:
+          tex = f.read()
+          texn = tex[tex.find('{'):]
+          dictn = json.loads(texn)
+          dictn.update(seDict)
+      with open('./dict/chatDict.py', 'w', encoding='utf-8') as fw:
+          dictn = 'dict = ' + json.dumps(dictn, ensure_ascii=False)
+          fw.write(dictn)
+
       continue
   elif flag == 'A':
       if len(dict) == 0:
@@ -43,26 +53,21 @@ while flag == 'A' or 'B':
       # check dict information
       print(dict)
   elif flag == 'a':
-      # print(dict)
-      # dict.update(hello = 'hi')
-      # print(dict)
       exDict = { 'hello': 'hi' }
       with open('./dict/chatDict.py', 'r', encoding='utf-8') as f:
-          # print(f.read())
           tex = f.read()
           print(tex)
           print(type(tex))
 
-          # print(tex.dict)
           texn = tex[tex.find('{'):]
           print(texn)
           dictn = json.loads(texn)
           print(dictn)
-          dictn.update(hello = 'hi')
+          dictn.update(exDict)
           print(dictn)
 
       with open('./dict/newchatDict.py', 'w', encoding='utf-8') as fw:
-          # fw.write(json.jumps(dictn))
+
           print(dictn)
           dictn = 'dict =' + json.dumps(dictn, ensure_ascii=False)
           print(dictn)
