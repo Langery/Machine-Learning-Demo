@@ -67,10 +67,3 @@ while flag == 'A' or 'B':
           dictn = 'dict =' + json.dumps(dictn, ensure_ascii=False)
           print(dictn)
           fw.write(dictn)
-          # print(type(dictn))
-          # dictn.update(exDict)
-          # print(dictn)
-
-          # k = eval(tex)
-          # f.write(pickle.dumps(exDict))
-          # print(f.read())
