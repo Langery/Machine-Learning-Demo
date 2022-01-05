@@ -18,11 +18,11 @@
 
 &emsp;&emsp;匈牙利算法
 
-$d^{(1)}(i,j)=(d_j-y_i)^TS_i^{-1}(d_j-y_i)$
+  $d^{(1)}(i,j)=(d_j-y_i)^TS_i^{-1}(d_j-y_i)$
 
-$d^{(2)}(i,j)=min\{1-r_j^Tr^{(i)}_k|r^{(i)}_k\in R_i\}$
+  $d^{(2)}(i,j)=min\{1-r_j^Tr^{(i)}_k|r^{(i)}_k\in R_i\}$
 
-$c_{i,j}=\lambda d^{(1)}(i,j)+(1-\lambda)d^{(2)}(i,j)$
+  $c_{i,j}=\lambda d^{(1)}(i,j)+(1-\lambda)d^{(2)}(i,j)$
 
 [参考文献]
 1. [多目标追踪利器--Deep Sort](https://zhuanlan.zhihu.com/p/45745892)
