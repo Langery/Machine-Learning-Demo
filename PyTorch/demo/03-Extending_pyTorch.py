@@ -5,21 +5,25 @@ import torch
   定义 Function
 '''
 class Linear(Function):
-  def forward(self, input, weight, bias=None):
+  def forward(ctx, input, weight, bias=None):
     self.save_for_backward(input, weight, bias)
     output = input.mm(weight.t())
     if bias is not None:
       output += bias.unsqueeze(0).expand_as(output)
     return output
-  def backward(self, grad_output):
-    input, weight, bias = self.saved_tensors
+  def backward(ctx, grad_output):
+    input, weight, bias = ctx.saved_tensors
     grad_input = grad_weight = grad_bias = None
 
-    if self.needs_input_grad[0]:
+    if ctx.needs_input_grad[0]:
       grad_input = grad_output.mm(weight)
-    if self.needs_input_grad[1]:
+    if ctx.needs_input_grad[1]:
       grad_weight = grad_output.t().mm(input)
-    if bias is not None and self.needs_input_grad[2]:
+    if bias is not None and ctx.needs_input_grad[2]:
       grad_bias = grad_output.sum(0).squeeze(0)
     
     return grad_input, grad_weight, grad_bias
+
+# used
+def linear(input, weight, bias=None):
+  return Linear()(input, weight, bias)
