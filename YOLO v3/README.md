@@ -18,19 +18,24 @@ c. concat
 
 > 三个发展方向
 
-a. Deeper 网络层数更深，代表网络VggNet
-b. Module 采用模块化的网络结构（Inception），代表网络GoogleNet
-c. Faster 轻量级网络模型，适合于移动端设备，代表网络MobileNet和ShuffleNet
-d. Functional 功能型网络，针对特定使用场景而发展出来。如检测模型YOLO，Faster RCNN；分割模型FCN， UNet
+a. Deeper 网络层数更深，代表网络VggNet<br/>
+b. Module 采用模块化的网络结构（Inception），代表网络GoogleNet<br/>
+c. Faster 轻量级网络模型，适合于移动端设备，代表网络MobileNet和ShuffleNet<br/>
+d. Functional 功能型网络，针对特定使用场景而发展出来。如检测模型YOLO，Faster RCNN；分割模型FCN， UNet<br/>
 
 > 三个阶段
 
 a. 0-1st generation
-LeNet-5 -> AlexNet -> ZF
+
+&emsp;LeNet-5 -> AlexNet -> ZF
+
 b. 2nd generation
-VGGNet -> GoogLeNet
+
+&emsp;VGGNet -> GoogLeNet
+
 c. 3rd generation
-ResNet -> DenseNet -> CapsNet
+
+&emsp;ResNet -> DenseNet -> CapsNet
 
   - LeNet-5
   - AlexNet
