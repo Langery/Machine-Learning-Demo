@@ -30,7 +30,7 @@ while flag == 'A' or 'B':
           fw.write(dictn)
 
       continue
-  elif flag == 'A':
+  elif flag == 'A': # 开始聊天
       if len(dict) == 0:
           print("现在我还不会回答任何问题，请让我学习;\n")
           continue
@@ -60,15 +60,15 @@ while flag == 'A' or 'B':
           print(type(tex))
 
           texn = tex[tex.find('{'):]
-          print(texn)
+
           dictn = json.loads(texn)
-          print(dictn)
+
           dictn.update(exDict)
-          print(dictn)
+
 
       with open('./dict/newchatDict.py', 'w', encoding='utf-8') as fw:
 
-          print(dictn)
+
           dictn = 'dict =' + json.dumps(dictn, ensure_ascii=False)
-          print(dictn)
+
           fw.write(dictn)
