@@ -74,6 +74,19 @@ c. 3rd generation
 
     $(x,y),(w,h),class,confidence$
 
+
+### YOLO (You Only Look Once)
+
+&emsp;&emsp;主要用于**目标检测**中。
+
+> keywords
+
+1. bounding box [ bbox ]
+2. ground truth bounding box [ gd ]
+3. predicted bounding box [ pd ]
+
+
+
 [参考文献]
 
 1. [一文看懂YOLO v3](https://blog.csdn.net/litt1e/article/details/88907542)
